@@ -24,4 +24,6 @@ public interface SysUserMapper {
      * @return
      */
     List<SysUser> selectAll();
+
+    int insert(SysUser sysUser);
 }
