@@ -30,7 +30,15 @@
     </select>
 
     <insert id="insert">
-        INSERT INTO sys_user(id, user_name, user_password, user_email, user_info, head_img, creat_time)
+        INSERT INTO sys_user(id, user_name, user_password, user_email, user_info, head_img, create_time)
         VALUES (#{id},#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
     </insert>
+
+
+    <insert id="insertUseGeneratedKeys" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO sys_user(user_name, user_password, user_email, user_info, head_img, create_time)
+        VALUES (#{userName},#{userPassword},#{userEmail},#{userInfo},#{headImg,jdbcType=BLOB},#{createTime,jdbcType=TIMESTAMP})
+    </insert>
+
+
 </mapper>

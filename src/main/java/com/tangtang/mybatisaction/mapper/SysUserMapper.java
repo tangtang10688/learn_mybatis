@@ -26,4 +26,6 @@ public interface SysUserMapper {
     List<SysUser> selectAll();
 
     int insert(SysUser sysUser);
+
+    int insertUseGeneratedKeys(SysUser sysUser);
 }
